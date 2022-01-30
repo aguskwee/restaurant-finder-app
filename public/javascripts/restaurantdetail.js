@@ -81,7 +81,7 @@ $(function() {
 			let menuTemplate = resp['menuTemplate'];
 			let detailTemplate = resp['detailTemplate'];
 			let owner = decodeURIComponent(details['owner']);
-console.log(owner + ' ' + findCookie(appCookie));
+
 			$('.detail-row').empty().append(Mustache.render(detailTemplate, details));
 			let menus = details['menus'];
 			if(!menus || menus.length == 0) {
