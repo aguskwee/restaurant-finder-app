@@ -160,7 +160,7 @@ router.post('/get-owned-restaurants', function(req, res, next) {
         // get owned restaurants
         const SQL = 'select res.id, res.name, avg(rat.rating) rat_avg from restaurants res left join overall_ratings rat \
                 on res.id = rat.restaurant_id where res.owner = ? group by res.id order by rat_avg desc limit 25';
-        conn.all(SQL, [encodeURIComponent(email)], function(err, rows) {
+        conn.all(SQL, [email], function(err, rows) {
             if(err) return res.send(null);
 
             let ownedRestaurants = [];
