@@ -1,0 +1,29 @@
+extends layout
+
+block content
+    .container.col-4.signup-form
+        .row
+            h4 Create An Account
+        br
+        .row
+            input#signup-username.form-control(type='text', placeholder='Your Name')
+        br
+        .row
+            input#signup-email.form-control(type='text', placeholder='Email Address')
+        br
+        .row
+            input#signup-password.form-control(type='password', placeholder='Password')
+        br
+        .row
+            input#signup-confirm-password.form-control(type='password', placeholder='Confirm Password')
+        br
+        br
+        .row
+            p.error Please fill all missing fields.
+        br
+        .row
+            button.btn.btn-primary#signup-btn Sign Up
+
+block js
+    script(src='/components/md5/dist/md5.min.js')
+    script(src='/javascripts/signup.js')

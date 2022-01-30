@@ -1,0 +1,70 @@
+extends layout
+
+block css
+    style(type='text/css').
+        #restaurant-rating {
+            margin-bottom: 1.5rem;
+        }
+        .cursor-pointer {
+            cursor: pointer;
+        }
+        .margin-right {
+            margin-right: 10px
+        }
+        .margin-right-extra {
+            margin-right: 14px
+        }
+        .col-10 > h4 {
+            margin-bottom: 1.5rem;
+        }
+        #restaurant-img {
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+            margin-right: 2rem;
+            max-height: 350px;
+        }
+        .btn-outline-warning {
+            margin-left: 3rem;
+        }
+        .card .btn-outline-warning {
+            margin: 1rem auto auto 0;
+            display: block;
+        }
+        p.error {
+            margin: 10px auto -10px;
+            color: red;
+            font-size: 0.8rem;
+            display: none;
+        }
+        .star-div {
+            margin-bottom: 1rem;
+        }
+        li.vertical-align-top {
+            vertical-align: top;
+        }
+        .item-img {
+            display: flex;
+            flex-direction: column;
+            height: 250px;
+        }
+        #menuList > li {
+            cursor: default;
+        }
+block content
+    br
+    br
+    .container
+        input(type='hidden', id='restaurantId' value= id)
+        input(type='hidden', id='owner')
+        .row.detail-row
+        br
+        br
+        br
+        .row
+            .col-10.offset-1
+                h4 Available menus in this restaurant
+        .row
+            .col-10.offset-1
+                ul#menuList.itemList
+
+block js
+    script(src='/javascripts/restaurantdetail.js')

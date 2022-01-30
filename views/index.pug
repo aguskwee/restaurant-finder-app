@@ -1,0 +1,19 @@
+extends layout
+
+block css
+    style(type='text/css').
+        h2 {
+            margin: 2rem auto !important;
+        }
+
+block content
+    .container
+        .row
+            .col-10.offset-1
+                h2 Popular Restaurants
+        .row
+            .col-10.offset-1
+                ul#popularList.itemList
+
+block js
+    script(src='javascripts/script.js')

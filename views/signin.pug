@@ -1,0 +1,26 @@
+extends layout
+
+block content
+    .container.col-4.signin-form
+        .row
+            h4 Restaurant Owner Sign In
+        br
+        .row
+            input#signin-email.form-control(type='text', placeholder='Email Address')
+        br
+        .row
+            input#signin-password.form-control(type='password', placeholder='Password')
+        br
+        br
+        .row
+            p.error Please fill all missing fields.
+        br
+        .row
+            button.btn.btn-primary#signin-btn Log In
+        br
+        .row
+            p Don't have an account? #[a(href='/signup') Sign Up]
+
+block js
+    script(src='/components/md5/dist/md5.min.js')
+    script(src='/javascripts/signin.js')

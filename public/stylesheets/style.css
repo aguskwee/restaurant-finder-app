@@ -1,0 +1,105 @@
+body {
+    padding: 0;
+    margin: 0;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navbar {
+    background-color: #1e88e5;
+    color: #fff;
+    width: 100%;
+    height: 70px;
+}
+
+.navbar select {
+    flex-grow: 0 !important;
+    width: 200px !important;
+}
+
+.itemList {
+    list-style: none;
+    padding-left: 0;
+}
+
+.itemList > li {
+    display: inline-block;
+    padding: 0 10px 10px 0;
+    cursor: pointer;
+}
+
+.itemList > li > .card {
+    background-color: #eee;
+}
+
+.itemList > li .body {
+    background-color: #fff;
+    padding: 10px 15px 20px;
+}
+
+.itemList > li .body h4 {
+    font-size: 1rem;
+}
+
+.itemList > li .body > .rating {
+    font-size:  0.8rem;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.itemList > li .body > .rating .score,
+.itemList > li .body > p.price {
+    color: #888;
+    margin: 5px auto 0;
+}
+
+.itemList p.price {
+    font-size: 0.8rem;
+    display: inline-block;
+}
+
+.fa-star, .fa-star-half {
+    color: orange;
+}
+
+.signin-form, .signup-form {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px 40px;
+    margin-top: 15vh;
+}
+
+.signin-form h4, .signup-form h4 {
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+.signin-form p, .signup-form p {
+    padding-left: 0;
+}
+
+.signin-form p.error, .signup-form p.error {
+    margin-bottom: -10px;
+    color: #fc4b6c;
+    display: none;
+}
+
+.popover-body {
+    text-align: center;
+}
+
+.popover-body svg.fa-star {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.popover-body button {
+    margin: 1rem auto 0;
+    display: block;
+}

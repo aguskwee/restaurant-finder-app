@@ -1,0 +1,21 @@
+extends layout
+
+block css
+    style(type='text/css').
+        .row.header {
+            margin: 2rem auto;
+        }
+
+block content
+    .container
+        .row.header
+            .col-5.offset-1
+                h2 My Restaurants
+            .col-3.offset-3.flex-end
+                button.btn.btn-primary(onclick='window.location="/newrestaurant"') Add a new restaurant
+        .row
+            .col-10.offset-1
+                ul#ownerRestaurants.itemList
+
+block js
+    script(src='javascripts/profile.js')

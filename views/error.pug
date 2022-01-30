@@ -1,0 +1,22 @@
+extends layout
+
+block css
+    style(type='text/css').
+        h1 {
+            font-size: 10rem;
+            font-weight: bold;
+            margin-top: 10vh;
+        }
+
+        h5 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+block content
+    .container
+        .row.justify-content-md-center
+            .col-md-8.text-center
+                h1= error.status
+                h5= error.message
+                button.btn.btn-primary(onclick='window.location="/"') Home

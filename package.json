@@ -1,0 +1,38 @@
+{
+  "name": "restaurant-finder",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "./node_modules/supervisor/lib/cli-wrapper.js ./bin/www"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "~5.15.4",
+    "bootstrap": "~5.1.3",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jquery": "~3.6.0",
+    "md5": "~2.3.0",
+    "morgan": "~1.9.1",
+    "multer": "~1.4.4",
+    "mustache": "~4.2.0",
+    "@popperjs/core": "~2.11.2",
+    "pug": "2.0.0-beta11",
+    "sqlite3": "~5.0.2",
+    "supervisor": "~0.12.0",
+    "@mapbox/togeojson": "~0.16.0"
+  },
+  "description": "A website to do search to rate restaurants and their menu in Singapore.",
+  "main": "app.js",
+  "keywords": [
+    "restaurant",
+    "menu",
+    "rate",
+    "rating",
+    "geosearch",
+    "search"
+  ],
+  "author": "Agus Kwee",
+  "license": "ISC"
+}

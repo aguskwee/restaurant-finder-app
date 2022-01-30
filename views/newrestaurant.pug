@@ -1,0 +1,85 @@
+extends layout
+
+block css
+    style(type='text/css').
+        #newrestaurant-img {
+            height: 100%;
+            color: #212529;
+            cursor: pointer;
+        }
+        #newrestaurant-img p, #newrestaurant-img svg,
+        .card.nobackground p, .card.nobackground svg,
+        .item-img p, .item-img svg {
+            opacity: 0.6;
+        }
+        textarea {
+            height: 100px;
+        } 
+        .card.nobackground {
+            background-color: transparent !important;
+        }
+        li.vertical-align-top {
+            vertical-align: top;
+        }
+        .item-img {
+            display: flex;
+            flex-direction: column;
+            height: 250px;
+        }
+        #newrestaurant-submit {
+            margin-bottom: 1rem;
+        }
+        p.error {
+            margin-bottom: 2px;
+            font-size: 0.85rem;
+            color: #f00;
+            display: none;
+        }
+block content
+    br
+    br
+    .container
+        .row
+            .col-1.offset-1
+                button.btn.btn-outline-primary(onclick='history.back()') Back
+            .col-3.offset-6.text-end
+                p.error
+                button#newrestaurant-btn.btn.btn-primary(onclick='createNewRestaurant()') Create a new restaurant
+        br
+        br
+        .row
+            .col-3.offset-1
+                #newrestaurant-img.card.justify-content-center.align-items-center(onclick='$("#newrestaurant-file").click()')
+                    i.fas.fa-plus.fa-4x
+                    p Add restaurant image
+                input#newrestaurant-file(type='file', hidden, accept='image/png, image/gif, image/jpeg')
+            .col-7
+                input#newrestaurant-name.form-control(type='text', placeholder='Restaurant name')
+                br
+                .row
+                    .col
+                        input#newrestaurant-openhour.form-control(placeholder='Opening hour (eg: 8, 9, 12)')
+                    .col
+                        input#newrestaurant-closehour.form-control(placeholder="Closing hour (eg: 18, 20, 23)")
+                br
+                input#newrestaurant-contact.form-control(type='text', placeholder='Restaurant contact number')
+                br
+                textarea#newrestaurant-addr.form-control(placeholder='Restaurant address')
+                br
+                .row
+                    .col
+                        input#newrestaurant-lat.form-control(placeholder='Latitude')
+                    .col
+                        input#newrestaurant-lng.form-control(placeholder='Longitude')
+        br
+        br
+        br
+        br
+        .row
+            .offset-1
+                ul#menuList.itemList
+                    li.col-3.vertical-align-top
+                        button#item-addnew.btn.btn-outline-dark(onclick='addNewMenu(true);') Add a new menu
+
+block js
+    script(src='/javascripts/newrestaurant.js')

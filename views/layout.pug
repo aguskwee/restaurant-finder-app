@@ -1,0 +1,87 @@
+doctype html
+html
+    head
+        title= title
+        link(rel='stylesheet', href='/components/bootstrap/dist/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/components/@fortawesome/fontawesome-free/css/fontawesome.min.css')
+        link(rel='stylesheet', href='/stylesheets/rangeSlider.css')
+        block css
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        style(type='text/css').
+            .fa-home {
+                margin-left: 10px;
+                margin-top: 5px;
+                cursor: pointer;
+            }
+            .fa-sign-out-alt, .fa-user {
+                cursor: pointer;
+
+            }
+
+            .slider-row {
+                background-color: #3397ed;
+            }
+            .slider-row #filter-body {
+                padding: 1rem 0;
+            }
+            .slider-row label {
+                color: #fff;
+                font-size: 1rem;
+            }
+            .slider--horizontal .slider__tip {
+                font-size: 0.75rem;
+            }
+            .slider__scale .scale__value {
+                color: #fff;
+            }
+
+    body
+
+        if showHeader
+            header.navbar.navbar-expanded-xxl
+                input(type='hidden' name='search-type' value= searchtype)
+                input(type='hidden' name='search-query' value= searchquery)
+                .container-xxl
+                    .col-1.text-center
+                        i.fas.fa-home.fa-2x(onclick='window.location="/"', title='Home')
+                    .col.offset-1
+                        .input-group.col
+                            button#filter-options.btn.btn-light(data-bs-toggle='collapse', href='#filter-body') #[i.fas.fa-filter]
+                            select#search-type.form-select
+                                option(value='name') Restaurant Name
+                                option(value='address') Restaurant Address
+                                option(value='timings') Operating Timing
+                                option(value='food') Food Name
+                                option(value='geoloc') Restaurant Geolocation
+                            input#search-input.form-control(placeholder='Enter keywords...')
+                            button#search-btn.btn.btn-light(onclick='doSearch()') Go
+                    if isLogin
+                        .col-1
+                            i.fas.fa-sign-out-alt.fa-2x.float-end(onclick='window.location="/signout"', title='Sign Out')
+                            i.fas.fa-user.fa-2x.float-end.me-3(onclick='window.location="/profile"', title='Your profile')
+                    else
+                        .col-3
+                            button.btn.btn-outline-light.float-end(onclick='window.location="/signin"') For Restaurant Owner
+            .row.slider-row
+                div#filter-body.col-8.offset-2.collapse(data-parent='#filter-option')
+                    .row
+                        .col-5
+                            label.form-label Overall restaurant rating filter
+                            #overall-slider(min=0 max=5)
+                        .col-5.offset-1
+                            label.form-label Menu rating filter
+                            #menu-slider(min=0 max=5)
+                    
+        block content
+
+        script(src='/components/jquery/dist/jquery.min.js')
+        script(src='/components/@popperjs/core/dist/umd/popper.min.js')
+        script(src='/components/bootstrap/dist/js/bootstrap.js')
+        script(src='/components/@fortawesome/fontawesome-free/js/all.min.js')
+        script(src='/components/mustache/mustache.min.js')
+        script(src='/javascripts/rangeSlider.js')
+        script(src='/javascripts/common.js')
+        script(src='/javascripts/layout.js')
+        script.
+            var appCookie = '!{cookie}';
+        block js
